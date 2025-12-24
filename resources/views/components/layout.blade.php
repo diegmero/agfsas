@@ -270,23 +270,54 @@
 
         // TRM Fetcher
         document.addEventListener('DOMContentLoaded', function () {
-            fetch('https://www.datos.gov.co/resource/32sa-8pi3.json?$limit=1&$order=vigenciahasta%20DESC')
+            // Get today's date in YYYY-MM-DD format
+            const today = new Date().toISOString().split('T')[0];
+            
+            // Fetch TRM data filtering by today's vigenciadesde
+            fetch(`https://www.datos.gov.co/resource/32sa-8pi3.json?vigenciadesde=${today}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data && data.length > 0) {
-                        const valor = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(data[0].valor);
-                        const vigencia = new Date(data[0].vigenciadesde).toLocaleDateString('es-CO');
-
-                        const text = `LA TRM DE HOY ES: ${valor}  -  VIGENCIA: ${vigencia}`;
-
-                        // Update all elements with class 'trm-value'
+                        // Format currency value
+                        const valor = new Intl.NumberFormat('es-CO', { 
+                            style: 'currency', 
+                            currency: 'COP',
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        }).format(data[0].valor);
+                        
+                        // Simple message: TRM HOY: $X,XXX.XX
+                        const text = `TRM HOY: ${valor}`;
+                        
+                        // Update all ticker elements
                         document.querySelectorAll('.trm-value').forEach(el => {
                             el.textContent = text;
                         });
 
-
-                        // Show the bar
+                        // Show the ticker bar
                         document.getElementById('trm-bar').classList.remove('hidden');
+                    } else {
+                        // Fallback: if no data for today, get the most recent
+                        fetch('https://www.datos.gov.co/resource/32sa-8pi3.json?$limit=1&$order=vigenciadesde DESC')
+                            .then(response => response.json())
+                            .then(fallbackData => {
+                                if (fallbackData && fallbackData.length > 0) {
+                                    const valor = new Intl.NumberFormat('es-CO', { 
+                                        style: 'currency', 
+                                        currency: 'COP',
+                                        minimumFractionDigits: 2,
+                                        maximumFractionDigits: 2
+                                    }).format(fallbackData[0].valor);
+                                    
+                                    const fecha = new Date(fallbackData[0].vigenciadesde).toLocaleDateString('es-CO');
+                                    const text = `TRM (${fecha}): ${valor}`;
+                                    
+                                    document.querySelectorAll('.trm-value').forEach(el => {
+                                        el.textContent = text;
+                                    });
+                                    document.getElementById('trm-bar').classList.remove('hidden');
+                                }
+                            });
                     }
                 })
                 .catch(err => console.error('Error fetching TRM:', err));
