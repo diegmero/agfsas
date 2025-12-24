@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AGF SAS - Soluciones Logísticas Integrales</title>
+    <link rel="icon" type="image/png"
+        href="https://res.cloudinary.com/dspoaxmvn/image/upload/v1766586402/agfsas-removebg-preview_2_odkoqc.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
@@ -35,8 +37,8 @@
                     <span>Personas</span>
                 </div>
                 <div class="flex space-x-6">
-                    <a href="#" class="hover:text-agf-yellow transition">Rastreo</a>
-                    <a href="#" class="hover:text-agf-yellow transition">Atención al Cliente</a>
+                    <a href="https://wa.me/3175150152" class="hover:text-agf-yellow transition">Rastreo</a>
+                    <a href="https://wa.me/3175150152" class="hover:text-agf-yellow transition">Atención al Cliente</a>
                     <a href="#" class="hover:text-agf-yellow transition">ES / EN</a>
                 </div>
             </div>
@@ -70,11 +72,36 @@
 
                     <!-- CTA Button -->
                     <div class="hidden md:flex items-center">
-                        <a href="#"
+                        <a href="https://wa.me/3175150152"
                             class="bg-agf-yellow text-black px-6 py-3 rounded font-extrabold uppercase tracking-wide text-sm hover:bg-yellow-500 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
                             Cotizar Envío
                         </a>
                     </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="text-gray-900 hover:text-agf-yellow focus:outline-none">
+                            <i class="fas fa-bars text-3xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 z-40 shadow-lg">
+                <div class="px-4 pt-2 pb-6 space-y-2">
+                    <a href="{{ route('home') }}"
+                        class="block px-3 py-3 rounded-md text-base font-bold text-gray-900 hover:bg-agf-yellow/10 hover:text-agf-yellow {{ request()->routeIs('home') ? 'text-agf-yellow bg-agf-yellow/5' : '' }}">Inicio</a>
+                    <a href="{{ route('services') }}"
+                        class="block px-3 py-3 rounded-md text-base font-bold text-gray-900 hover:bg-agf-yellow/10 hover:text-agf-yellow {{ request()->routeIs('services') ? 'text-agf-yellow bg-agf-yellow/5' : '' }}">Servicios</a>
+                    <a href="{{ route('about') }}"
+                        class="block px-3 py-3 rounded-md text-base font-bold text-gray-900 hover:bg-agf-yellow/10 hover:text-agf-yellow {{ request()->routeIs('about') ? 'text-agf-yellow bg-agf-yellow/5' : '' }}">Nosotros</a>
+                    <a href="{{ route('contact') }}"
+                        class="block px-3 py-3 rounded-md text-base font-bold text-gray-900 hover:bg-agf-yellow/10 hover:text-agf-yellow {{ request()->routeIs('contact') ? 'text-agf-yellow bg-agf-yellow/5' : '' }}">Contacto</a>
+                    <a href="https://wa.me/3175150152"
+                        class="block w-full text-center mt-4 bg-agf-yellow text-black px-6 py-3 rounded font-extrabold uppercase tracking-wide text-sm hover:bg-yellow-500">
+                        Cotizar Envío
+                    </a>
                 </div>
             </div>
         </header>
@@ -135,18 +162,18 @@
                         &copy; {{ date('Y') }} AGF SAS. Todos los derechos reservados.
                     </div>
                     <div class="flex space-x-6 mt-4 md:mt-0">
-                        <a href="#" class="text-gray-400 hover:text-agf-yellow text-xl"><i
+                        <a href="https://www.linkedin.com/in/alliance-global-freight-51a21a230/?originalSubdomain=co"
+                            class="text-gray-400 hover:text-agf-yellow text-xl"><i
                                 class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-agf-yellow text-xl"><i
+                        <a href="https://www.instagram.com/agfsas/" class="text-gray-400 hover:text-agf-yellow text-xl"><i
                                 class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
-    <!-- Floating Social Sidebar -->
-    <!-- Floating Social Sidebar -->
-    <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-2 items-end">
+    <!-- Floating Social Sidebar (Hidden on Mobile) -->
+    <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex flex-col gap-2 items-end">
         <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/alliance-global-freight-51a21a230/?originalSubdomain=co" target="_blank"
             class="group flex items-center justify-end w-12 hover:w-36 h-12 bg-blue-700 text-white shadow-lg rounded-l-lg overflow-hidden transition-all duration-300 relative">
@@ -175,6 +202,15 @@
             </div>
         </a>
     </div>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 
 </html>

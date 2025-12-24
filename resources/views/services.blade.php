@@ -14,62 +14,81 @@
         </div>
     </div>
 
-    <!-- Service Focus Section -->
-    <div class="bg-white py-16 sm:py-24">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6">Enfoque de Servicio</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-16">
-                AGF SAS ofrece un enfoque personalizado que facilita a su empresa la información necesaria,
-                permitiéndole elegir la mejor opción ajustada a sus necesidades.
-            </p>
 
-            <!-- Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Almacenamiento -->
+    <div class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Enfoque de Servicio</h2>
+                <p class="mt-4 text-xl text-gray-500">AGF SAS ofrece un enfoque personalizado que facilita a su empresa la información necesaria,
+                permitiéndole elegir la mejor opción ajustada a sus necesidades.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Service 1: Agenciamiento -->
                 <div
-                    class="bg-gray-50 rounded-2xl p-8 hover:-translate-y-2 transition duration-300 border border-gray-100 shadow-sm hover:shadow-xl hover:border-agf-yellow group">
+                    class="group relative bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                     <div
-                        class="bg-gray-900 w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:bg-agf-yellow transition-colors">
-                        <i class="fas fa-warehouse text-2xl text-white group-hover:text-black"></i>
+                        class="h-48 bg-gray-100 flex items-center justify-center group-hover:bg-agf-yellow transition-colors duration-300">
+                        <i
+                            class="fas fa-file-invoice-dollar text-6xl text-gray-900 group-hover:text-black transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Almacenamiento</h3>
-                    <p class="text-gray-600">
-                        AGF SAS proporciona servicio profesional en las actividades relacionadas con el bodegaje de sus
-                        productos, acorde con los requerimientos específicos de estos.
-                    </p>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-agf-yellow transition-colors">
+                            Agenciamiento Aduanero</h3>
+                        <p class="text-sm text-gray-600 mb-4">Gestión experta de trámites y regulaciones para
+                            importación y exportación.</p>
+                    </div>
                 </div>
 
-                <!-- Agenciamiento -->
+                <!-- Service 2: Terrestre -->
                 <div
-                    class="bg-gray-50 rounded-2xl p-8 hover:-translate-y-2 transition duration-300 border border-gray-100 shadow-sm hover:shadow-xl hover:border-agf-yellow group">
+                    class="group relative bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                     <div
-                        class="bg-gray-900 w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:bg-agf-yellow transition-colors">
-                        <i class="fas fa-ship text-2xl text-white group-hover:text-black"></i>
+                        class="h-48 bg-gray-100 flex items-center justify-center group-hover:bg-agf-yellow transition-colors duration-300">
+                        <i
+                            class="fas fa-truck-moving text-6xl text-gray-900 group-hover:text-black transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Agenciamiento de Carga</h3>
-                    <p class="text-gray-600">
-                        Coordinación experta para el transporte internacional de mercancías, asegurando el cumplimiento
-                        de normativas y tiempos de entrega.
-                    </p>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-agf-yellow transition-colors">
+                            Transporte Terrestre</h3>
+                        <p class="text-sm text-gray-600 mb-4">Flota moderna y monitoreada. Distribución nacional puerta
+                            a puerta.</p>
+                    </div>
                 </div>
 
-                <!-- Transporte Nacional -->
+                <!-- Service 3: Maritimo -->
                 <div
-                    class="bg-gray-50 rounded-2xl p-8 hover:-translate-y-2 transition duration-300 border border-gray-100 shadow-sm hover:shadow-xl hover:border-agf-yellow group">
+                    class="group relative bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
                     <div
-                        class="bg-gray-900 w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:bg-agf-yellow transition-colors">
-                        <i class="fas fa-truck text-2xl text-white group-hover:text-black"></i>
+                        class="h-48 bg-gray-100 flex items-center justify-center group-hover:bg-agf-yellow transition-colors duration-300">
+                        <i class="fas fa-ship text-6xl text-gray-900 group-hover:text-black transition-colors"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Transporte Nacional – Urbano</h3>
-                    <p class="text-gray-600">
-                        Distribución eficiente a nivel nacional y urbano, conectando sus productos con sus clientes
-                        finales de manera rápida y segura.
-                    </p>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-agf-yellow transition-colors">
+                            Transporte Marítimo</h3>
+                        <p class="text-sm text-gray-600 mb-4">Soluciones FCL y LCL eficientes con tarifas competitivas
+                            globales.</p>
+                    </div>
+                </div>
+
+                <!-- Service 4: Almacenaje -->
+                <div
+                    class="group relative bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div
+                        class="h-48 bg-gray-100 flex items-center justify-center group-hover:bg-agf-yellow transition-colors duration-300">
+                        <i class="fas fa-warehouse text-6xl text-gray-900 group-hover:text-black transition-colors"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-agf-yellow transition-colors">
+                            Almacenaje</h3>
+                        <p class="text-sm text-gray-600 mb-4">Servicio profesional de bodegaje acorde con los
+                            requerimientos de su producto.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
+    
     <!-- Benefits Section -->
     <div class="bg-gray-900 py-24 sm:py-32">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
