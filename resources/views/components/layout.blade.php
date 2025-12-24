@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AGF SAS - Soluciones Logísticas Integrales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @else
+        <!-- Placeholder for dev mode if vite not running -->
+    @endif
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans antialiased">
+    <div class="min-h-screen flex flex-col">
+        <!-- Top Bar (Corporate Style) -->
+        <div class="bg-black text-white text-xs font-medium py-2">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+                <div class="flex space-x-6">
+                    <span>Empresas</span>
+                    <span>Personas</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-agf-yellow transition">Rastreo</a>
+                    <a href="#" class="hover:text-agf-yellow transition">Atención al Cliente</a>
+                    <a href="#" class="hover:text-agf-yellow transition">ES / EN</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header (Sticky) -->
+        <header class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50 transition-all duration-300"
+            id="main-header">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-20">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="/" class="flex items-center gap-3 group">
+                            <img class="h-16 w-auto object-contain group-hover:opacity-90 transition-opacity"
+                                src="https://res.cloudinary.com/dspoaxmvn/image/upload/v1766586402/agfsas-removebg-preview_2_odkoqc.png"
+                                alt="AGFSAS Logo">
+                        </a>
+                    </div>
+
+                    <!-- Desktop Nav -->
+                    <nav class="hidden md:flex space-x-10 items-center">
+                        <a href="/"
+                            class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors">Inicio</a>
+                        <div class="relative group">
+                            <button
+                                class="text-base font-bold text-gray-900 group-hover:text-agf-yellow uppercase tracking-wide transition-colors flex items-center">
+                                Servicios
+                                <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                        </div>
+                        <a href="#"
+                            class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors">Nosotros</a>
+                        <a href="#"
+                            class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors">Alianzas</a>
+                        <a href="#"
+                            class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors">Contacto</a>
+                    </nav>
+
+                    <!-- CTA Button -->
+                    <div class="hidden md:flex items-center">
+                        <a href="#"
+                            class="bg-agf-yellow text-black px-6 py-3 rounded font-extrabold uppercase tracking-wide text-sm hover:bg-yellow-400 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                            Cotizar Envío
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow">
+            {{ $slot }}
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-black text-white mt-auto pt-16 pb-8 border-t-4 border-agf-yellow">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                    <div class="col-span-1 md:col-span-1">
+                        <img class="h-12 w-auto mb-6 grayscale hover:grayscale-0 transition"
+                            src="https://res.cloudinary.com/dspoaxmvn/image/upload/v1766586402/agfsas-removebg-preview_2_odkoqc.png"
+                            alt="AGFSAS Footer Logo">
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Conectando a Colombia con el mundo. Soluciones logísticas integrales con tecnología de punta
+                            y seguridad garantizada.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-agf-yellow font-bold uppercase tracking-wider mb-4 text-sm">Nuestros Servicios
+                        </h3>
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li><a href="#" class="hover:text-white transition">Carga Aérea</a></li>
+                            <li><a href="#" class="hover:text-white transition">Carga Marítima</a></li>
+                            <li><a href="#" class="hover:text-white transition">Transporte Terrestre</a></li>
+                            <li><a href="#" class="hover:text-white transition">Aduanas</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-agf-yellow font-bold uppercase tracking-wider mb-4 text-sm">Legal</h3>
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li><a href="#" class="hover:text-white transition">Política de Privacidad</a></li>
+                            <li><a href="#" class="hover:text-white transition">Términos y Condiciones</a></li>
+                            <li><a href="#" class="hover:text-white transition">Sostenibilidad</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-agf-yellow font-bold uppercase tracking-wider mb-4 text-sm">Contacto</h3>
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li class="flex items-start gap-3">
+                                Bogotá, Colombia
+                            </li>
+                            <li class="flex items-start gap-3">
+                                +57 (601) 123 4567
+                            </li>
+                            <li class="flex items-start gap-3">
+                                contacto@agfsas.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-500 text-sm">
+                        &copy; {{ date('Y') }} AGF SAS. Todos los derechos reservados.
+                    </div>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-agf-yellow text-xl"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-agf-yellow text-xl"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- Floating Social Sidebar -->
+    <!-- Floating Social Sidebar -->
+    <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex flex-col gap-2 items-end">
+        <a href="#"
+            class="bg-blue-600 text-white p-3 transition-all duration-300 rounded-l-lg shadow-lg group flex items-center gap-2 overflow-hidden w-12 hover:w-36">
+            <i class="fab fa-linkedin text-xl flex-shrink-0"></i>
+            <span
+                class="opacity-0 group-hover:opacity-100 whitespace-nowrap font-bold text-sm transition-opacity duration-300">LinkedIn</span>
+        </a>
+        <a href="#"
+            class="bg-red-600 text-white p-3 transition-all duration-300 rounded-l-lg shadow-lg group flex items-center gap-2 overflow-hidden w-12 hover:w-36">
+            <i class="fab fa-instagram text-xl flex-shrink-0"></i>
+            <span
+                class="opacity-0 group-hover:opacity-100 whitespace-nowrap font-bold text-sm transition-opacity duration-300">Instagram</span>
+        </a>
+        <a href="#"
+            class="bg-green-500 text-white p-3 transition-all duration-300 rounded-l-lg shadow-lg group flex items-center gap-2 overflow-hidden w-12 hover:w-36">
+            <i class="fab fa-whatsapp text-xl flex-shrink-0"></i>
+            <span
+                class="opacity-0 group-hover:opacity-100 whitespace-nowrap font-bold text-sm transition-opacity duration-300">WhatsApp</span>
+        </a>
+    </div>
+</body>
+
+</html>
