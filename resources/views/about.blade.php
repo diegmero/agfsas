@@ -1,4 +1,7 @@
-<x-layout>
+<x-layout title="Nosotros - Alliance Global Freight SAS | Nuestra Misión y Visión"
+    description="Conoce nuestra misión, visión y valores. Grupo logístico integrado con 6+ años de experiencia en soluciones estratégicas globales para cadenas de suministro."
+    keywords="Alliance Global Freight, AGFSAS empresa, logística integrada Colombia, misión visión valores, cadena de suministro"
+    ogType="website">
     <!-- Hero Section -->
     <div class="relative bg-black py-24 sm:py-32">
         <div class="absolute inset-0 overflow-hidden">

@@ -1,4 +1,7 @@
-<x-layout>
+<x-layout title="Servicios de Logística Internacional - AGFSAS | Transporte y Almacenaje"
+    description="Ofrecemos agenciamiento aduanero, transporte terrestre, marítimo y almacenaje profesional. Soluciones integrales para su cadena de suministro en Colombia."
+    keywords="servicios logística Colombia, agenciamiento aduanero, transporte terrestre Colombia, transporte marítimo, almacenaje, FCL, LCL, distribución nacional"
+    ogType="website">
     <!-- Hero Section -->
     <div class="relative bg-black py-24 sm:py-32">
         <div class="absolute inset-0 overflow-hidden">
@@ -19,8 +22,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Enfoque de Servicio</h2>
-                <p class="mt-4 text-xl text-gray-500">AGF SAS ofrece un enfoque personalizado que facilita a su empresa la información necesaria,
-                permitiéndole elegir la mejor opción ajustada a sus necesidades.</p>
+                <p class="mt-4 text-xl text-gray-500">AGF SAS ofrece un enfoque personalizado que facilita a su empresa
+                    la información necesaria,
+                    permitiéndole elegir la mejor opción ajustada a sus necesidades.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -88,7 +92,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Benefits Section -->
     <div class="bg-gray-900 py-24 sm:py-32">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">

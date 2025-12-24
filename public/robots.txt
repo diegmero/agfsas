@@ -1,2 +1,11 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap
+Sitemap: {{ url('/sitemap.xml') }}
+
+# Block access to sensitive directories
+Disallow: /api/
+Disallow: /admin/
+Disallow: /.env
+Disallow: /vendor/

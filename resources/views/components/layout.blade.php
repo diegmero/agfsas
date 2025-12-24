@@ -1,19 +1,130 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="es-CO">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AGF SAS - Soluciones Logísticas Integrales</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {{-- Dynamic SEO Meta Tags --}}
+    <title>{{ $title ?? 'Alliance Global Freight - Soluciones Logísticas Integrales en Colombia' }}</title>
+    <meta name="description"
+        content="{{ $description ?? 'Líderes en logística internacional. Agenciamiento aduanero, transporte terrestre, marítimo y almacenaje. 6+ años conectando Colombia con el mundo.' }}">
+    <meta name="keywords"
+        content="{{ $keywords ?? 'logística Colombia, agenciamiento aduanero, transporte internacional, carga marítima, transporte terrestre, almacenaje, AGFSAS, Alliance Global Freight' }}">
+    <meta name="author" content="Alliance Global Freight SAS">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    {{-- Theme Color for Mobile Browsers --}}
+    <meta name="theme-color" content="#F1B10E">
+    <meta name="msapplication-TileColor" content="#F1B10E">
+
+    {{-- Open Graph / Facebook --}}
+    <meta property="og:type" content="{{ $ogType ?? 'website' }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="{{ $title ?? 'Alliance Global Freight - Soluciones Logísticas Integrales' }}">
+    <meta property="og:description"
+        content="{{ $description ?? 'Líderes en logística internacional. Agenciamiento aduanero, transporte terrestre, marítimo y almacenaje.' }}">
+    <meta property="og:image"
+        content="https://res.cloudinary.com/dspoaxmvn/image/upload/v1766586402/agfsas-removebg-preview_2_odkoqc.png">
+    <meta property="og:site_name" content="Alliance Global Freight SAS">
+    <meta property="og:locale" content="es_CO">
+
+    {{-- Twitter Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url()->current() }}">
+    <meta name="twitter:title" content="{{ $title ?? 'Alliance Global Freight - Soluciones Logísticas Integrales' }}">
+    <meta name="twitter:description" content="{{ $description ?? 'Líderes en logística internacional en Colombia.' }}">
+    <meta name="twitter:image"
+        content="https://res.cloudinary.com/dspoaxmvn/image/upload/v1766586402/agfsas-removebg-preview_2_odkoqc.png">
+
+    {{-- Favicon --}}
     <link rel="icon" type="image/png"
         href="https://res.cloudinary.com/dspoaxmvn/image/upload/v1766586402/agfsas-removebg-preview_2_odkoqc.png">
+    <link rel="apple-touch-icon"
+        href="https://res.cloudinary.com/dspoaxmvn/image/upload/v1766586402/agfsas-removebg-preview_2_odkoqc.png">
+
+    {{-- Preconnect for Performance --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://res.cloudinary.com">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    {{-- JSON-LD Structured Data --}}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Alliance Global Freight SAS",
+        "alternateName": "AGFSAS",
+        "url": "{{ url('/') }}",
+        "logo": "https://res.cloudinary.com/dspoaxmvn/image/upload/v1766586402/agfsas-removebg-preview_2_odkoqc.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+57-317-515-0152",
+            "contactType": "customer service",
+            "areaServed": "CO",
+            "availableLanguage": ["es", "en"]
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Troncal de Occidente 20-85",
+            "addressLocality": "Mosquera",
+            "addressRegion": "Cundinamarca",
+            "postalCode": "250040",
+            "addressCountry": "CO"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/alliance-global-freight-51a21a230/",
+            "https://www.instagram.com/agfsas/",
+            "https://www.facebook.com/p/Grupo-logístico-AGF-100083154889778/"
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Alliance Global Freight SAS",
+        "image": "https://res.cloudinary.com/dspoaxmvn/image/upload/v1766586402/agfsas-removebg-preview_2_odkoqc.png",
+        "@id": "{{ url('/') }}",
+        "url": "{{ url('/') }}",
+        "telephone": "+57-317-515-0152",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Troncal de Occidente 20-85",
+            "addressLocality": "Mosquera",
+            "addressRegion": "Cundinamarca",
+            "postalCode": "250040",
+            "addressCountry": "CO"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 4.7069,
+            "longitude": -74.2318
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+            ],
+            "opens": "08:00",
+            "closes": "18:00"
+        }
+    }
+    </script>
 
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])

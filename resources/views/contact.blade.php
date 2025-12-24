@@ -1,4 +1,7 @@
-<x-layout>
+<x-layout title="Contacto - Alliance Global Freight | Mosquera, Colombia"
+    description="Contáctanos en Mosquera, Cundinamarca. WhatsApp: +57 317 515 0152 | Email: info@agfsas.com.co. Cotiza tu envío internacional hoy mismo."
+    keywords="contacto AGFSAS, logística Mosquera, cotizar envío, WhatsApp logística, Alliance Global Freight contacto"
+    ogType="website">
     <div class="bg-gray-50 py-24 sm:py-32">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="max-w-2xl mx-auto text-center mb-16">
