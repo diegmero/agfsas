@@ -146,7 +146,7 @@
                         <h3 class="text-agf-yellow font-bold uppercase tracking-wider mb-4 text-sm">Contacto</h3>
                         <ul class="space-y-3 text-sm text-gray-300">
                             <li class="flex items-start gap-3">
-                                Bogotá, Colombia
+                                Mosquera, Colombia
                             </li>
                             <li class="flex items-start gap-3">
                                 +57 317 515 0152
