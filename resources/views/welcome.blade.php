@@ -42,10 +42,10 @@
                                 <input type="text"
                                     class="flex-1 min-w-0 block w-full px-3 py-2 rounded-l-md focus:ring-agf-yellow focus:border-agf-yellow sm:text-sm border-agf-yellow bg-white text-black placeholder-gray-500"
                                     placeholder="Ej: AGF-12345678">
-                                <button type="button"
+                                <a href="https://wa.me/573175150152" target="_blank"
                                     class="inline-flex items-center px-6 py-2 border border-l-0 border-agf-yellow rounded-r-md bg-agf-yellow text-black hover:bg-yellow-500 font-bold text-sm uppercase tracking-wider transition-colors">
                                     RASTREAR
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
