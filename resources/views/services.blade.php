@@ -1,7 +1,4 @@
-<x-layout title="Servicios de Logística Internacional - AGFSAS | Transporte y Almacenaje"
-    description="Ofrecemos agenciamiento aduanero, transporte terrestre, marítimo y almacenaje profesional. Soluciones integrales para su cadena de suministro en Colombia."
-    keywords="servicios logística Colombia, agenciamiento aduanero, transporte terrestre Colombia, transporte marítimo, almacenaje, FCL, LCL, distribución nacional"
-    ogType="website">
+<x-layout>
     <!-- Hero Section -->
     <div class="relative bg-black py-24 sm:py-32">
         <div class="absolute inset-0 overflow-hidden">

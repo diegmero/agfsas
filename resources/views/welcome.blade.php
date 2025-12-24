@@ -1,7 +1,4 @@
-<x-layout title="Alliance Global Freight - Soluciones Logísticas Integrales en Colombia | AGFSAS"
-    description="Líderes en logística internacional. Agenciamiento aduanero, transporte terrestre, marítimo y almacenaje. 6+ años conectando Colombia con el mundo. Cotiza hoy."
-    keywords="logística Colombia, agenciamiento aduanero Mosquera, transporte internacional Colombia, carga marítima, transporte terrestre, almacenaje Cundinamarca, AGFSAS, Alliance Global Freight, envíos internacionales"
-    ogType="website">
+<x-layout>
     <!-- Hero Section -->
     <div class="relative bg-black">
         <div class="max-w-7xl mx-auto">
