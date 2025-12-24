@@ -149,10 +149,10 @@
                                 Bogotá, Colombia
                             </li>
                             <li class="flex items-start gap-3">
-                                +57 (601) 123 4567
+                                +57 317 515 0152
                             </li>
                             <li class="flex items-start gap-3">
-                                contacto@agfsas.com
+                                info@agfsas.com.co
                             </li>
                         </ul>
                     </div>
