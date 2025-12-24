@@ -58,30 +58,20 @@
 
                     <!-- Desktop Nav -->
                     <nav class="hidden md:flex space-x-10 items-center">
-                        <a href="/"
-                            class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors">Inicio</a>
-                        <div class="relative group">
-                            <button
-                                class="text-base font-bold text-gray-900 group-hover:text-agf-yellow uppercase tracking-wide transition-colors flex items-center">
-                                Servicios
-                                <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                        </div>
-                        <a href="#"
-                            class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors">Nosotros</a>
-                        <a href="#"
-                            class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors">Alianzas</a>
-                        <a href="#"
-                            class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors">Contacto</a>
+                        <a href="{{ route('home') }}"
+                            class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors {{ request()->routeIs('home') ? 'text-agf-yellow' : '' }}">Inicio</a>
+                        <a href="{{ route('services') }}"
+                            class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors {{ request()->routeIs('services') ? 'text-agf-yellow' : '' }}">Servicios</a>
+                        <a href="{{ route('about') }}"
+                            class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors {{ request()->routeIs('about') ? 'text-agf-yellow' : '' }}">Nosotros</a>
+                        <a href="{{ route('contact') }}"
+                            class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors {{ request()->routeIs('contact') ? 'text-agf-yellow' : '' }}">Contacto</a>
                     </nav>
 
                     <!-- CTA Button -->
                     <div class="hidden md:flex items-center">
                         <a href="#"
-                            class="bg-agf-yellow text-black px-6 py-3 rounded font-extrabold uppercase tracking-wide text-sm hover:bg-yellow-400 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                            class="bg-agf-yellow text-black px-6 py-3 rounded font-extrabold uppercase tracking-wide text-sm hover:bg-yellow-500 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
                             Cotizar Envío
                         </a>
                     </div>
@@ -156,24 +146,33 @@
     </div>
     <!-- Floating Social Sidebar -->
     <!-- Floating Social Sidebar -->
-    <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex flex-col gap-2 items-end">
-        <a href="#"
-            class="bg-blue-600 text-white p-3 transition-all duration-300 rounded-l-lg shadow-lg group flex items-center gap-2 overflow-hidden w-12 hover:w-36">
-            <i class="fab fa-linkedin text-xl flex-shrink-0"></i>
+    <div class="fixed right-0 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-2 items-end">
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/alliance-global-freight-51a21a230/?originalSubdomain=co" target="_blank"
+            class="group flex items-center justify-end w-12 hover:w-36 h-12 bg-blue-700 text-white shadow-lg rounded-l-lg overflow-hidden transition-all duration-300 relative">
             <span
-                class="opacity-0 group-hover:opacity-100 whitespace-nowrap font-bold text-sm transition-opacity duration-300">LinkedIn</span>
+                class="absolute right-14 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-bold pr-2">LinkedIn</span>
+            <div class="w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <i class="fab fa-linkedin-in text-2xl"></i>
+            </div>
         </a>
-        <a href="#"
-            class="bg-red-600 text-white p-3 transition-all duration-300 rounded-l-lg shadow-lg group flex items-center gap-2 overflow-hidden w-12 hover:w-36">
-            <i class="fab fa-instagram text-xl flex-shrink-0"></i>
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/p/Grupo-log%C3%ADstico-AGF-100083154889778/?locale=es_LA" target="_blank"
+            class="group flex items-center justify-end w-12 hover:w-36 h-12 bg-blue-600 text-white shadow-lg rounded-l-lg overflow-hidden transition-all duration-300 relative">
             <span
-                class="opacity-0 group-hover:opacity-100 whitespace-nowrap font-bold text-sm transition-opacity duration-300">Instagram</span>
+                class="absolute right-14 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-bold pr-2">Facebook</span>
+            <div class="w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <i class="fab fa-facebook-f text-2xl"></i>
+            </div>
         </a>
-        <a href="#"
-            class="bg-green-500 text-white p-3 transition-all duration-300 rounded-l-lg shadow-lg group flex items-center gap-2 overflow-hidden w-12 hover:w-36">
-            <i class="fab fa-whatsapp text-xl flex-shrink-0"></i>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/573175150152" target="_blank"
+            class="group flex items-center justify-end w-12 hover:w-36 h-12 bg-green-500 text-white shadow-lg rounded-l-lg overflow-hidden transition-all duration-300 relative">
             <span
-                class="opacity-0 group-hover:opacity-100 whitespace-nowrap font-bold text-sm transition-opacity duration-300">WhatsApp</span>
+                class="absolute right-14 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-bold pr-2">WhatsApp</span>
+            <div class="w-12 h-12 flex items-center justify-center flex-shrink-0">
+                <i class="fab fa-whatsapp text-2xl"></i>
+            </div>
         </a>
     </div>
 </body>
