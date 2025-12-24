@@ -21,7 +21,7 @@
                                     <i class="fas fa-map-marker-alt text-2xl text-agf-yellow"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900">Dirección Pasipal</h4>
+                                    <h4 class="font-bold text-gray-900">Dirección</h4>
                                     <p class="text-gray-600 mt-1">Av. Troncal de Occidente 20-85</p>
                                     <p class="text-gray-600">Mosquera, Cundinamarca</p>
                                     <p class="text-gray-600">Colombia</p>
