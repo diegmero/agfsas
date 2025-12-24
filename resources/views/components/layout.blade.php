@@ -382,7 +382,7 @@
                 .then(data => {
                     if (data && data.length > 0) {
                         const valor = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(data[0].valor);
-                        const vigencia = new Date(data[0].vigenciahasta).toLocaleDateString('es-CO');
+                        const vigencia = new Date(data[0].vigenciadesde).toLocaleDateString('es-CO');
 
                         const text = `LA TRM DE HOY ES: ${valor}  -  VIGENCIA: ${vigencia}`;
 
