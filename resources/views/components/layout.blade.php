@@ -24,6 +24,26 @@
         body {
             font-family: 'Manrope', sans-serif;
         }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 60s linear infinite;
+            width: max-content;
+            display: flex;
+        }
+
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
     </style>
 </head>
 
@@ -44,67 +64,99 @@
             </div>
         </div>
 
-        <!-- Main Header (Sticky) -->
-        <header class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50 transition-all duration-300"
-            id="main-header">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-20">
-                    <!-- Logo -->
-                    <div class="flex-shrink-0 flex items-center">
-                        <a href="/" class="flex items-center gap-3 group">
-                            <img class="h-16 w-auto object-contain group-hover:opacity-90 transition-opacity"
-                                src="https://res.cloudinary.com/dspoaxmvn/image/upload/v1766586402/agfsas-removebg-preview_2_odkoqc.png"
-                                alt="AGFSAS Logo">
-                        </a>
+        <!-- Sticky Header Wrapper -->
+        <div class="sticky top-0 z-50">
+            <!-- TRM Ticker Row (Yellow) -->
+            <div id="trm-bar"
+                class="bg-agf-yellow text-black text-xs font-bold py-1 overflow-hidden relative border-b border-yellow-500 hidden">
+                <div class="animate-marquee whitespace-nowrap inline-block">
+                    <!-- Set 1 -->
+                    <div class="inline-flex items-center">
+                        <span class="trm-value px-4">Cargando TRM...</span>
+                        <span class="px-4 mx-10">•</span>
+                        <span class="trm-value px-4">Cargando TRM...</span>
+                        <span class="px-4 mx-10">•</span>
+                        <span class="trm-value px-4">Cargando TRM...</span>
+                        <span class="px-4 mx-10">•</span>
+                        <span class="trm-value px-4">Cargando TRM...</span>
+                        <span class="px-4 mx-10">•</span>
                     </div>
+                    <!-- Set 2 (Duplicate for Loop) -->
+                    <div class="inline-flex items-center">
+                        <span class="trm-value px-4">Cargando TRM...</span>
+                        <span class="px-4 mx-10">•</span>
+                        <span class="trm-value px-4">Cargando TRM...</span>
+                        <span class="px-4 mx-10">•</span>
+                        <span class="trm-value px-4">Cargando TRM...</span>
+                        <span class="px-4 mx-10">•</span>
+                        <span class="trm-value px-4">Cargando TRM...</span>
+                        <span class="px-4 mx-10">•</span>
+                    </div>
+                </div>
+            </div>
 
-                    <!-- Desktop Nav -->
-                    <nav class="hidden md:flex space-x-10 items-center">
+            <!-- Main Header -->
+            <header class="bg-white shadow-sm border-b border-gray-100 transition-all duration-300" id="main-header">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between items-center h-20">
+                        <!-- Logo -->
+                        <div class="flex-shrink-0 flex items-center">
+                            <a href="/" class="flex items-center gap-3 group">
+                                <img class="h-16 w-auto object-contain group-hover:opacity-90 transition-opacity"
+                                    src="https://res.cloudinary.com/dspoaxmvn/image/upload/v1766586402/agfsas-removebg-preview_2_odkoqc.png"
+                                    alt="AGFSAS Logo">
+                            </a>
+                        </div>
+
+                        <!-- Desktop Nav -->
+                        <nav class="hidden md:flex space-x-10 items-center">
+                            <a href="{{ route('home') }}"
+                                class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors {{ request()->routeIs('home') ? 'text-agf-yellow' : '' }}">Inicio</a>
+                            <a href="{{ route('services') }}"
+                                class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors {{ request()->routeIs('services') ? 'text-agf-yellow' : '' }}">Servicios</a>
+                            <a href="{{ route('about') }}"
+                                class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors {{ request()->routeIs('about') ? 'text-agf-yellow' : '' }}">Nosotros</a>
+                            <a href="{{ route('contact') }}"
+                                class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors {{ request()->routeIs('contact') ? 'text-agf-yellow' : '' }}">Contacto</a>
+                        </nav>
+
+                        <!-- CTA Button -->
+                        <div class="hidden md:flex items-center">
+                            <a href="https://wa.me/3175150152"
+                                class="bg-agf-yellow text-black px-6 py-3 rounded font-extrabold uppercase tracking-wide text-sm hover:bg-yellow-500 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                                Cotizar Envío
+                            </a>
+                        </div>
+
+                        <!-- Mobile Menu Button -->
+                        <div class="md:hidden flex items-center">
+                            <button id="mobile-menu-btn" class="text-gray-900 hover:text-agf-yellow focus:outline-none">
+                                <i class="fas fa-bars text-3xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu -->
+                <div id="mobile-menu"
+                    class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 z-40 shadow-lg">
+                    <div class="px-4 pt-2 pb-6 space-y-2">
                         <a href="{{ route('home') }}"
-                            class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors {{ request()->routeIs('home') ? 'text-agf-yellow' : '' }}">Inicio</a>
+                            class="block px-3 py-3 rounded-md text-base font-bold text-gray-900 hover:bg-agf-yellow/10 hover:text-agf-yellow {{ request()->routeIs('home') ? 'text-agf-yellow bg-agf-yellow/5' : '' }}">Inicio</a>
                         <a href="{{ route('services') }}"
-                            class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors {{ request()->routeIs('services') ? 'text-agf-yellow' : '' }}">Servicios</a>
+                            class="block px-3 py-3 rounded-md text-base font-bold text-gray-900 hover:bg-agf-yellow/10 hover:text-agf-yellow {{ request()->routeIs('services') ? 'text-agf-yellow bg-agf-yellow/5' : '' }}">Servicios</a>
                         <a href="{{ route('about') }}"
-                            class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors {{ request()->routeIs('about') ? 'text-agf-yellow' : '' }}">Nosotros</a>
+                            class="block px-3 py-3 rounded-md text-base font-bold text-gray-900 hover:bg-agf-yellow/10 hover:text-agf-yellow {{ request()->routeIs('about') ? 'text-agf-yellow bg-agf-yellow/5' : '' }}">Nosotros</a>
                         <a href="{{ route('contact') }}"
-                            class="text-base font-bold text-gray-900 hover:text-agf-yellow uppercase tracking-wide transition-colors {{ request()->routeIs('contact') ? 'text-agf-yellow' : '' }}">Contacto</a>
-                    </nav>
-
-                    <!-- CTA Button -->
-                    <div class="hidden md:flex items-center">
+                            class="block px-3 py-3 rounded-md text-base font-bold text-gray-900 hover:bg-agf-yellow/10 hover:text-agf-yellow {{ request()->routeIs('contact') ? 'text-agf-yellow bg-agf-yellow/5' : '' }}">Contacto</a>
                         <a href="https://wa.me/3175150152"
-                            class="bg-agf-yellow text-black px-6 py-3 rounded font-extrabold uppercase tracking-wide text-sm hover:bg-yellow-500 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                            class="block w-full text-center mt-4 bg-agf-yellow text-black px-6 py-3 rounded font-extrabold uppercase tracking-wide text-sm hover:bg-yellow-500">
                             Cotizar Envío
                         </a>
                     </div>
-
-                    <!-- Mobile Menu Button -->
-                    <div class="md:hidden flex items-center">
-                        <button id="mobile-menu-btn" class="text-gray-900 hover:text-agf-yellow focus:outline-none">
-                            <i class="fas fa-bars text-3xl"></i>
-                        </button>
-                    </div>
                 </div>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 z-40 shadow-lg">
-                <div class="px-4 pt-2 pb-6 space-y-2">
-                    <a href="{{ route('home') }}"
-                        class="block px-3 py-3 rounded-md text-base font-bold text-gray-900 hover:bg-agf-yellow/10 hover:text-agf-yellow {{ request()->routeIs('home') ? 'text-agf-yellow bg-agf-yellow/5' : '' }}">Inicio</a>
-                    <a href="{{ route('services') }}"
-                        class="block px-3 py-3 rounded-md text-base font-bold text-gray-900 hover:bg-agf-yellow/10 hover:text-agf-yellow {{ request()->routeIs('services') ? 'text-agf-yellow bg-agf-yellow/5' : '' }}">Servicios</a>
-                    <a href="{{ route('about') }}"
-                        class="block px-3 py-3 rounded-md text-base font-bold text-gray-900 hover:bg-agf-yellow/10 hover:text-agf-yellow {{ request()->routeIs('about') ? 'text-agf-yellow bg-agf-yellow/5' : '' }}">Nosotros</a>
-                    <a href="{{ route('contact') }}"
-                        class="block px-3 py-3 rounded-md text-base font-bold text-gray-900 hover:bg-agf-yellow/10 hover:text-agf-yellow {{ request()->routeIs('contact') ? 'text-agf-yellow bg-agf-yellow/5' : '' }}">Contacto</a>
-                    <a href="https://wa.me/3175150152"
-                        class="block w-full text-center mt-4 bg-agf-yellow text-black px-6 py-3 rounded font-extrabold uppercase tracking-wide text-sm hover:bg-yellow-500">
-                        Cotizar Envío
-                    </a>
-                </div>
-            </div>
-        </header>
+            </header>
+        </div>
 
         <!-- Main Content -->
         <main class="flex-grow">
@@ -120,12 +172,14 @@
                             src="https://res.cloudinary.com/dspoaxmvn/image/upload/v1766586402/agfsas-removebg-preview_2_odkoqc.png"
                             alt="AGFSAS Footer Logo">
                         <p class="text-gray-400 text-sm leading-relaxed">
-                            Conectando a Colombia con el mundo. Soluciones logísticas integrales con tecnología de punta
+                            Conectando a Colombia con el mundo. Soluciones logísticas integrales con tecnología de
+                            punta
                             y seguridad garantizada.
                         </p>
                     </div>
                     <div>
-                        <h3 class="text-agf-yellow font-bold uppercase tracking-wider mb-4 text-sm">Nuestros Servicios
+                        <h3 class="text-agf-yellow font-bold uppercase tracking-wider mb-4 text-sm">Nuestros
+                            Servicios
                         </h3>
                         <ul class="space-y-3 text-sm text-gray-300">
                             <li><a href="#" class="hover:text-white transition">Carga Aérea</a></li>
@@ -163,10 +217,9 @@
                     </div>
                     <div class="flex space-x-6 mt-4 md:mt-0">
                         <a href="https://www.linkedin.com/in/alliance-global-freight-51a21a230/?originalSubdomain=co"
-                            class="text-gray-400 hover:text-agf-yellow text-xl"><i
-                                class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/agfsas/" class="text-gray-400 hover:text-agf-yellow text-xl"><i
-                                class="fab fa-instagram"></i></a>
+                            class="text-gray-400 hover:text-agf-yellow text-xl"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/agfsas/"
+                            class="text-gray-400 hover:text-agf-yellow text-xl"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -209,6 +262,30 @@
 
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
+        });
+
+        // TRM Fetcher
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('https://www.datos.gov.co/resource/32sa-8pi3.json?$limit=1&$order=vigenciahasta%20DESC')
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.length > 0) {
+                        const valor = new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(data[0].valor);
+                        const vigencia = new Date(data[0].vigenciahasta).toLocaleDateString('es-CO');
+
+                        const text = `LA TRM DE HOY ES: ${valor}  -  VIGENCIA: ${vigencia}`;
+
+                        // Update all elements with class 'trm-value'
+                        document.querySelectorAll('.trm-value').forEach(el => {
+                            el.textContent = text;
+                        });
+
+
+                        // Show the bar
+                        document.getElementById('trm-bar').classList.remove('hidden');
+                    }
+                })
+                .catch(err => console.error('Error fetching TRM:', err));
         });
     </script>
 </body>

@@ -35,7 +35,7 @@
                         </div>
 
                         <!-- Integrated Tracking Field (Subtle) -->
-                        <div class="max-w-sm sm:mx-auto lg:mx-0 pt-4">
+                        <div class="max-w-md sm:mx-auto lg:mx-0 pt-4">
                             <label class="block text-xs font-bold text-yellow-400 uppercase tracking-wide mb-2">Rastrear
                                 Guía / Tracking ID</label>
                             <div class="flex rounded-md shadow-sm">
